@@ -1,0 +1,44 @@
+Failure # 1 (occurred at 2025-11-07_00-57-15)
+[36mray::ImplicitFunc.train()[39m (pid=51268, ip=10.144.151.105, actor_id=d129096d626e0f197dcd3be001000000, repr=train)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/tune/trainable/function_trainable.py", line 44, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/tune/trainable/function_trainable.py", line 249, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/home/viole/Desktop/Cyr/NAS/main.py", line 59, in train
+    loss= criterion(model(x), y)
+                    ^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/modules/pooling.py", line 226, in forward
+    return F.max_pool2d(
+           ^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/_jit_internal.py", line 627, in fn
+    return if_false(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/torch/nn/functional.py", line 823, in _max_pool2d
+    return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Given input size: (64x1x1). Calculated output size: (64x0x0). Output size is too small

@@ -1,0 +1,15 @@
+Failure # 1 (occurred at 2025-11-06_23-49-41)
+Task was killed due to the node running low on memory.
+Memory on the node (IP: 10.144.151.105, ID: 4122b7c7922ee89839704e92b4e886134db2f19785140c19c3d9911e) where the lease (actor ID: NIL_IDlease ID: 09000000804a8657360963f90fcfd926f80cb835581269fe564512a5c30f89d9, name=ImplicitFunc.__init__, pid=25063, memory used=0.19GB) was running was 6.90GB / 7.14GB (0.965737), which exceeds the memory usage threshold of 0.95. Ray killed this worker (ID: 3f2d9a0ccdd1a0a1e27e52d8e0a02a22030b3c669e76263d02bc4501) because it was the most recently scheduled task; to see more information about memory usage on this node, use `ray logs raylet.out -ip 10.144.151.105`. To see the logs of the worker, use `ray logs worker-3f2d9a0ccdd1a0a1e27e52d8e0a02a22030b3c669e76263d02bc4501*out -ip 10.144.151.105. Top 10 memory users:
+PID	MEM(GB)	COMMAND
+25011	0.20	ray::IDLE
+25048	0.20	ray::IDLE
+25016	0.20	ray::IDLE
+25012	0.20	ray::IDLE
+25050	0.19	ray::IDLE
+25063	0.19	ray::IDLE
+25056	0.19	ray::IDLE
+25046	0.19	ray::IDLE
+25053	0.19	ray::IDLE
+25055	0.19	ray::IDLE
+Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. Set max_restarts and max_task_retries to enable retry when the task crashes due to OOM. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.

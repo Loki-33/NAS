@@ -1,0 +1,15 @@
+Failure # 1 (occurred at 2025-11-06_23-44-41)
+Task was killed due to the node running low on memory.
+Memory on the node (IP: 10.144.151.105, ID: d014101b66d89d8ea8bf9afc3d96bbafec0ac85fb8dd38e8dcd9dfa2) where the lease (actor ID: NIL_IDlease ID: 0b00000081dd71663dd7e3e99cde2ebeb1b8ec239161b5d3a12f8e8cb37ee02e, name=ImplicitFunc.__init__, pid=21229, memory used=0.16GB) was running was 6.81GB / 7.14GB (0.953672), which exceeds the memory usage threshold of 0.95. Ray killed this worker (ID: a40f1eedfd164302034f3f729b5c165171645d4c8235487d2f97d0ac) because it was the most recently scheduled task; to see more information about memory usage on this node, use `ray logs raylet.out -ip 10.144.151.105`. To see the logs of the worker, use `ray logs worker-a40f1eedfd164302034f3f729b5c165171645d4c8235487d2f97d0ac*out -ip 10.144.151.105. Top 10 memory users:
+PID	MEM(GB)	COMMAND
+2325	0.27	firefox
+2531	0.18	/usr/lib/firefox/firefox-bin -contentproc -isForBrowser -prefsHandle 0:41078 -prefMapHandle 1:275271...
+21190	0.17	ray::IDLE
+21220	0.17	ray::IDLE
+21223	0.16	ray::IDLE
+21229	0.16	ray::IDLE
+21208	0.15	ray::IDLE
+21214	0.15	ray::IDLE
+3963	0.15	/usr/lib/firefox/firefox-bin -contentproc -isForBrowser -prefsHandle 0:46220 -prefMapHandle 1:275271...
+21201	0.14	ray::IDLE
+Refer to the documentation on how to address the out of memory issue: https://docs.ray.io/en/latest/ray-core/scheduling/ray-oom-prevention.html. Consider provisioning more memory on this node or reducing task parallelism by requesting more CPUs per task. Set max_restarts and max_task_retries to enable retry when the task crashes due to OOM. To adjust the kill threshold, set the environment variable `RAY_memory_usage_threshold` when starting Ray. To disable worker killing, set the environment variable `RAY_memory_monitor_refresh_ms` to zero.

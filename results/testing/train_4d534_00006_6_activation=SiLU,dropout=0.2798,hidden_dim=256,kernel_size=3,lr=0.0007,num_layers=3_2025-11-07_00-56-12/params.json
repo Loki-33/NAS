@@ -1,0 +1,8 @@
+{
+  "activation": "SiLU",
+  "dropout": 0.27977275943752417,
+  "hidden_dim": 256,
+  "kernel_size": 3,
+  "lr": 0.0006918829213128836,
+  "num_layers": 3
+}

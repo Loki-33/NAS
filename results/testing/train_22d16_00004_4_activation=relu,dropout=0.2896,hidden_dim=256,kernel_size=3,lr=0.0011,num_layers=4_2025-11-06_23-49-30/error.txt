@@ -1,0 +1,20 @@
+Failure # 1 (occurred at 2025-11-06_23-50-18)
+[36mray::ImplicitFunc.train()[39m (pid=25053, ip=10.144.151.105, actor_id=bd44a5e9352a6ab2af40e63f01000000, repr=train)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/tune/trainable/function_trainable.py", line 44, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/viole/Desktop/Cyr/NAS/.venv/lib/python3.11/site-packages/ray/tune/trainable/function_trainable.py", line 249, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/home/viole/Desktop/Cyr/NAS/main.py", line 24, in train
+    getattr(nn, config['activation'].capitalize())(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'torch.nn' has no attribute 'Relu'
