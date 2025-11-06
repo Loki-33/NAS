@@ -1,8 +1,0 @@
-{
-  "activation": "relu",
-  "dropout": 0.26544354461646924,
-  "hidden_dim": 256,
-  "kernel_size": 5,
-  "lr": 0.007866410489906087,
-  "num_layers": 4
-}

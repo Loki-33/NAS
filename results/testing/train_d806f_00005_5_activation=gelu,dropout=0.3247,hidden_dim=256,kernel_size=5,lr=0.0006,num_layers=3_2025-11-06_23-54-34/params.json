@@ -1,8 +1,0 @@
-{
-  "activation": "gelu",
-  "dropout": 0.324661833750611,
-  "hidden_dim": 256,
-  "kernel_size": 5,
-  "lr": 0.0006463175095722791,
-  "num_layers": 3
-}

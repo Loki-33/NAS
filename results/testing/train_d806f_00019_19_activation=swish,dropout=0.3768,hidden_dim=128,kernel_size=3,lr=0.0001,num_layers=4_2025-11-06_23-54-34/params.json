@@ -1,8 +1,0 @@
-{
-  "activation": "swish",
-  "dropout": 0.3767851445989263,
-  "hidden_dim": 128,
-  "kernel_size": 3,
-  "lr": 0.00011780521492516939,
-  "num_layers": 4
-}
