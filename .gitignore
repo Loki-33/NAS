@@ -11,3 +11,6 @@ wheels/
 
 #folder
 results/
+results/testing 
+.results/
+.results/testing
